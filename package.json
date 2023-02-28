@@ -1,6 +1,6 @@
 {
-  "name": "aws-auto-scaling-nodejs-app",
-  "version": "1.0.0",
+  "name": "c-aws-base-project",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ckymn/aws-auto-scaling-nodejs-app.git"
+    "url": "git+https://github.com/ckymn/c-aws-base-project.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ckymn/aws-auto-scaling-nodejs-app/issues"
+    "url": "https://github.com/ckymn/c-aws-base-project/issues"
   },
-  "homepage": "https://github.com/ckymn/aws-auto-scaling-nodejs-app#readme",
+  "homepage": "https://github.com/ckymn/c-aws-base-project#readme",
   "dependencies": {
     "express": "^4.18.2"
   }
