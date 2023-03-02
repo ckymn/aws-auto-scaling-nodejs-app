@@ -15,18 +15,4 @@ export NVM_DIR="$HOME/.nvm"
 npm install
 
 #start our node app in the background
-node app.js > app.out.log 2> app.err.log < /dev/null & 
-
-
-
-# #install pm2
-# npm install pm2 -g
-
-# #start our node app in the background
-# pm2 start app.js > app.out.log 2> app.err.log < /dev/null & 
-
-# #save pm2 processes
-# pm2 save
-
-# #startup pm2 processes
-# pm2 startup
+node app.js > app.out.log 2> app.err.log < /dev/null &

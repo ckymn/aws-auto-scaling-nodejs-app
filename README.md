@@ -25,6 +25,7 @@ cd /home/ec2-user
 wget https://aws-codedeploy-us-east-1.s3.amazonaws.com/latest/install
 sudo chmod +x ./install
 sudo ./install auto
+sudo service codedeploy-agent start
 ```
 
 Check if CodeDeploy agent is running:
