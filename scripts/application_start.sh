@@ -1,6 +1,10 @@
 #!/bin/bash
 
-echo 'run application_start.sh: ' >> /home/ec2-user/c-aws-base-project/deploy.log
+#start application
+sudo pm2 start /home/ec2-user/c-aws-base-project/app.js
 
-echo 'pm2 restart nodejs-express-app' >> /home/ec2-user/c-aws-base-project/deploy.log
-pm2 restart nodejs-express-app >> /home/ec2-user/c-aws-base-project/deploy.log
+#save pm2 list
+sudo pm2 save
+
+#restart pm2
+sudo pm2 restart all

@@ -4,19 +4,19 @@ files:
   - source: /
     destination: /home/ec2-user/c-aws-base-project
 hooks:
-  # ApplicationStop:
-  # DownloadBundle:
-  #  BeforeInstall:
-  #    - location: scripts/before_install.sh
-  #      timeout: 300
-  #      runas: root
-  # Install:
+  BeforeInstall:
+    - location: scripts/before_install.sh
+      timeout: 60
+      runas: root
   AfterInstall:
     - location: scripts/after_install.sh
-      timeout: 300
+      timeout: 60
       runas: root
   ApplicationStart:
     - location: scripts/application_start.sh
-      timeout: 300
+      timeout: 60
       runas: root
-# ValidateService:
+  ApplicationStop:
+    - location: scripts/application_stop.sh
+      timeout: 60
+      runas: root
