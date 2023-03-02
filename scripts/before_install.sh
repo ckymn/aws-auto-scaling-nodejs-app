@@ -1,15 +1,15 @@
 #!/bin/bash
 
-# download nvm
+#download node and npm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+. ~/.nvm/nvm.sh
+nvm install node
 
-#export NVM dir
-export NVM_DIR="/.nvm"	
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"	
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
-
-# install node
-nvm install 17.0.1
-
-# get source code from githubt
-git clone https://github.com/ckymn/c-aws-base-project.git
+#create our working directory if it doesnt exist
+DIR="/home/ec2-user/c-aws-base-project"
+if [ -d "$DIR" ]; then
+  echo "${DIR} exists"
+else
+  echo "Creating ${DIR} directory"
+  mkdir ${DIR}
+fi

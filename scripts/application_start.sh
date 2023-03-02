@@ -1,10 +1,30 @@
 #!/bin/bash
 
-#start application
-sudo pm2 start /home/ec2-user/c-aws-base-project/app.js
+#give permission for everything in the express-app directory
+sudo chmod -R 777 /home/ec2-user/c-aws-base-project
 
-#save pm2 list
-sudo pm2 save
+#navigate into our working directory where we have all our github files
+cd /home/ec2-user/c-aws-base-project
 
-#restart pm2
-sudo pm2 restart all
+#add npm and node to path
+export NVM_DIR="$HOME/.nvm"	
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # loads nvm	
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # loads nvm bash_completion (node is in path now)
+
+#install node modules
+npm install
+
+#start our node app in the background
+node app.js > app.out.log 2> app.err.log < /dev/null & 
+
+# #install pm2
+# npm install pm2 -g
+
+# #start our node app in the background
+# pm2 start app.js > app.out.log 2> app.err.log < /dev/null & 
+
+# #save pm2 processes
+# pm2 save
+
+# #startup pm2 processes
+# pm2 startup

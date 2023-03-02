@@ -4,19 +4,15 @@ files:
   - source: /
     destination: /home/ec2-user/c-aws-base-project
 hooks:
-  # BeforeInstall:
-  #   - location: scripts/before_install.sh
-  #     timeout: 60
-  #     runas: root
-  AfterInstall:
-    - location: scripts/after_install.sh
-      timeout: 300
-      runas: root
+  ApplicationStop:
+    - location: scripts/application_stop.sh
+      timeout: 60
+      runas: ec2-user
+  BeforeInstall:
+    - location: scripts/before_install.sh
+      timeout: 60
+      runas: ec2-user
   ApplicationStart:
     - location: scripts/application_start.sh
       timeout: 300
-      runas: root
-  # ApplicationStop:
-  #   - location: scripts/application_stop.sh
-  #     timeout: 60
-  #     runas: root
+      runas: ec2-user
